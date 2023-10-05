@@ -41,12 +41,16 @@ INSTALLED_APPS = [
     'tickets'
 ]
 
-REST_FRAMEWORK={
-    'DEFAULT_AUTHENTICATION_CLASSES':
-    # using BaseicAuthentication i mean user and password
-    ['rest_framework.authentication.BasicAuthentication'],
-    'DEFAULT_PERMISSION_CLASSES':
-    ['rest_framework.permissions.IsAuthenticated']
+REST_FRAMEWORK = {
+    # ###----- this is the first authentication for all my end points -----### #
+
+    # 'DEFAULT_AUTHENTICATION_CLASSES':
+    # # using BaseicAuthentication i mean user and password
+    # ['rest_framework.authentication.BasicAuthentication'],
+    # 'DEFAULT_PERMISSION_CLASSES':
+    # ['rest_framework.permissions.IsAuthenticated']
+
+
 }
 
 MIDDLEWARE = [
