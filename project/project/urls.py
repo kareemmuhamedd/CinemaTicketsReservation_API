@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from tickets import views
 from rest_framework.routers import DefaultRouter
+from rest_framework.authtoken.views import obtain_auth_token;
 
 # this is routes using for viewsets endpoint urls
 router = DefaultRouter()
@@ -71,8 +72,11 @@ urlpatterns = [
 
 
     # 10 rest auth url ((to make the user can logout from the api web page))
-    path('api-auth',include('rest_framework.urls'))
+    path('api-auth',include('rest_framework.urls')),
 
+
+    # 11 Token authentication
+    path('api-token-auth',obtain_auth_token)
 
 
 

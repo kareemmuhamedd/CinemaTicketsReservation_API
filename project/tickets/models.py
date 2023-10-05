@@ -1,5 +1,7 @@
 from django.db import models
 
+
+
 # We will have three models 
 # Guest -- Movie -- Reservation
 

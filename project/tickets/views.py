@@ -183,9 +183,16 @@ class mixins_pk(mixins.RetrieveModelMixin, mixins.UpdateModelMixin, mixins.Destr
 class generics_list(generics.ListCreateAPIView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
-    # the second to line of codes fo the authenticate the end point
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #! the second to line of codes fo the authenticate the end point using normal authenticate
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
+
+    #! the following code for auth token 
+    authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
+
+
+
 
 
 # 6.2 get put delete
@@ -193,8 +200,13 @@ class generics_list(generics.ListCreateAPIView):
 class generics_pk(generics.RetrieveUpdateDestroyAPIView):
     queryset = Guest.objects.all()
     serializer_class = GuestSerializer
-    authentication_classes = [BasicAuthentication]
-    permission_classes = [IsAuthenticated]
+    #! the second to line of codes fo the authenticate the end point using normal authenticate
+    # authentication_classes = [BasicAuthentication]
+    # permission_classes = [IsAuthenticated]
+
+    #! the following code for auth token 
+    authentication_classes = [TokenAuthentication]
+    # permission_classes = [IsAuthenticated]
 
 
 # 7 viewsets

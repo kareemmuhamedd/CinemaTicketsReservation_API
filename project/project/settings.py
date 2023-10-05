@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'tickets'
+    'tickets',
+    'rest_framework.authtoken',
 ]
 
 REST_FRAMEWORK = {
@@ -49,6 +50,16 @@ REST_FRAMEWORK = {
     # ['rest_framework.authentication.BasicAuthentication'],
     # 'DEFAULT_PERMISSION_CLASSES':
     # ['rest_framework.permissions.IsAuthenticated']
+
+    # ------------------------------------------------
+    #! --------TOKEN--------- #
+    # in this i will use the token insted of authentication
+    # because in the authentication i will every time i send request to enter the password and the name
+    # but in the token we will see the defferance between them clearly
+
+    'DEFAULT_AUTHENTICATION_CLASSES':
+    ['rest_framework.authentication.TokenAuthentication'],
+
 
 
 }
